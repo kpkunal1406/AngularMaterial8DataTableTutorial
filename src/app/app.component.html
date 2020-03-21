@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="account_no">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Account Number</th>
+      <td mat-cell *matCellDef="let row">{{row.account_no}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+        <td mat-cell *matCellDef="let row">{{row.date}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="transaction_details">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Transaction Details</th>
+        <td mat-cell *matCellDef="let row">{{row.transaction_details}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="value_date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Value Date</th>
+        <td mat-cell *matCellDef="let row">{{row.value_date}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="withdrawal_amt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Withdrawal Amount</th>
+        <td mat-cell *matCellDef="let row">{{row.withdrawal_amt}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="balance_amt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Balance Amount</th>
+        <td mat-cell *matCellDef="let row">{{row.balance_amt}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="deposit_amt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Deposit Amount</th>
+        <td mat-cell *matCellDef="let row">{{row.deposit_amt}}</td>
+      </ng-container>
+      
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Angular 8 pagination -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+</div>
